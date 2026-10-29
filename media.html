@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Showcase</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/WhatsApp Image 2026-10-29 at 09.31.20.jpeg">
+
+    <style>
+        /* Reset dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Background Gradasi Dinamis Beranimasi */
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            background: linear-gradient(-45deg, #0f172a, #1e1b4b, #2e1065, #0f172a);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            position: relative;
+            overflow-x: hidden;
+            color: #fff;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Efek Elemen Cahaya Mengambang (Floating Glow Orbs) */
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.5;
+            animation: float 10s ease-in-out infinite alternate;
+        }
+
+        .orb-1 {
+            width: 320px;
+            height: 320px;
+            background: #8b5cf6;
+            top: 5%;
+            left: 10%;
+        }
+
+        .orb-2 {
+            width: 380px;
+            height: 380px;
+            background: #06b6d4;
+            bottom: 10%;
+            right: 10%;
+            animation-duration: 12s;
+            animation-direction: alternate-reverse;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) scale(1); }
+            100% { transform: translateY(-40px) scale(1.1); }
+        }
+
+        /* Kontainer Utama dengan Efek Glassmorphism */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            align-items: center;
+        }
+
+        /* Styling Media Card */
+        .media-item {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.02);
+        }
+
+        audio {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 30px;
+        }
+
+        video, iframe {
+            width: 100%;
+            max-width: 650px;
+            aspect-ratio: 16 / 9;
+            border-radius: 14px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cahaya latar belakang (animasi glowing) -->
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+
+    <!-- Kontainer Konten -->
+    <main class="container">
+        
+        <div class="media-item">
+            <img src="assets/images/Screenshot 2026-10-09 135904.png" alt="Gambar Showcase">
+        </div>
+
+        <div class="media-item">
+            <audio controls>
+                <source src="assets/audio/Justin Bieber - That Should Be Me - Cakes & Eclairs.mp3" type="audio/mpeg">
+                Browser Anda tidak mendukung elemen audio.
+            </audio>
+        </div>
+
+        <div class="media-item">
+            <video controls>
+                <source src="assets/vidio/Screen Recording 2026-10-23 142356.mp4" type="video/mp4">
+                Browser Anda tidak mendukung elemen video.
+            </video>
+        </div>
+
+        <div class="media-item">
+            <iframe 
+                src="https://www.youtube.com/embed/R9HAJGWJIzk?si=YZ_1aFcWqARC4Tu_&amp;controls=0" 
+                title="YouTube video player" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+    </main>
+
+</body>
+</html>
